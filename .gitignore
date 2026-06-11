@@ -1,7 +1,9 @@
 out/
+.kotlin/
 *.jar
 *.class
 .idea/workspace.xml
 .idea/shelf/
+.idea/gradle.xml
 .DS_Store
 Thumbs.db
