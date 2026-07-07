@@ -38,6 +38,9 @@ fun main() {
     // Quand tu as vraiment besoin d'ajouter ou de retirer des éléments,
     // tu crées une MutableList avec mutableListOf(...).
     val courses = mutableListOf("pain", "lait")
+    // Pas de contradiction avec val : val gèle la RÉFÉRENCE (interdit de
+    // réassigner courses à une AUTRE liste), pas le CONTENU. Une MutableList
+    // reste donc modifiable via add()/remove(), même stockée dans un val.
     courses.add("oeufs")    // ajoute à la fin de la liste
     courses.remove("lait")  // retire l'élément qui a cette valeur
     println("Courses : $courses (taille : ${courses.size})")

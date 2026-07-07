@@ -133,13 +133,14 @@ fun exercice1() {
 }
 
 fun exercice2() {
-    // ÉNONCÉ : écris une fonction saluer(nom: String, politesse: String)
+    // ÉNONCÉ : écris une fonction saluer(nom: String, politesse: String): String
     // qui renvoie une phrase comme "Bonjour, Monsieur Dupont !".
     // Le paramètre politesse doit avoir une valeur par défaut
     // (par exemple "Monsieur"). Appelle-la deux fois ici : une fois
     // sans préciser la politesse, une fois en la précisant.
     // INDICE : valeur par défaut -> politesse: String = "Monsieur",
-    // et construis la phrase avec un template "$politesse $nom".
+    // et construis la phrase avec un template qui inclut le préfixe et le
+    // point d'exclamation final, du genre "Bonjour, $politesse $nom !".
 }
 
 fun exercice3() {

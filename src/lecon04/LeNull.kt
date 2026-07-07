@@ -92,9 +92,18 @@ fun main() {
     // s'en souvient : DANS le bloc, le String? est traité comme un String.
     // C'est le "smart cast" (conversion intelligente de type).
     println("--- 7. Le smart cast ---")
-    val surnomAlice: String? = surnomDe("Alice")
+    // Cas NON-null : la branche if s'exécute et le smart cast opère.
+    val surnomRobert2: String? = surnomDe("Robert") // vaut "Bob"
+    if (surnomRobert2 != null) {
+        // Ici, surnomRobert2 est un String : .length direct, sans ?. !
+        println("Robert a un surnom de ${surnomRobert2.length} lettres") // 3
+    } else {
+        println("Robert n'a pas de surnom connu")
+    }
+    // Cas null, pour contraster : on tombe dans le else.
+    val surnomAlice: String? = surnomDe("Alice") // vaut null
     if (surnomAlice != null) {
-        // Ici, surnomAlice est un String : .length direct, sans ?. !
+        // Non atteint ici : surnomAlice est null.
         println("Alice a un surnom de ${surnomAlice.length} lettres")
     } else {
         println("Alice n'a pas de surnom connu")

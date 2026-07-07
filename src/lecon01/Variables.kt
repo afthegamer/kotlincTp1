@@ -65,7 +65,7 @@ fun main() {
     // Tu peux aussi écrire le type toi-même, après un deux-points : "nom: Type".
     // C'est utile pour clarifier ton intention, ou pour forcer un type précis.
     val nombreDeRoues: Int = 4
-    val temperature: Double = 21.0 // si on écrivait 21 (sans le .0), Kotlin déduirait Int
+    val temperature: Double = 21.0 // ici on force Double ; sans annotation, val t = 21 donnerait un Int (et 21.0 un Double)
     println("nombreDeRoues = " + nombreDeRoues)
     println("temperature = " + temperature)
 
@@ -122,10 +122,7 @@ fun exercice1() {
     // puis affiche-les dans UNE SEULE phrase grâce à un template de chaîne.
     // Exemple de sortie : Je m'appelle Nina, j'ai 25 ans et je mesure 1.68 m.
     // Indice : tout tient dans un seul println("...") avec des $ à l'intérieur.
-    val name: String="brad"
-    val age: Int=20
-    val dimension: Int = 182
-    println("bonjour je m'appele $name et j'ai $age et je mesure $dimension")
+    // (à toi d'écrire ton code ici)
 }
 
 // ----------------------------------------------------------------------------
@@ -138,7 +135,7 @@ fun exercice2() {
     // 3. Calcule le montant en dollars dans une troisième val (multiplication).
     // 4. Affiche le tout avec un template, par exemple : 50.0 euros = 54.0 dollars
     // Indice : le taux ne change pas pendant le programme... val ou var ?
-    val tauxDeChange:
+    // (à toi d'écrire ton code ici)
 }
 
 // ----------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 package lecon07
 
 // =====================================================================
-//  LEÇON 7 — INTERFACES ET GÉNÉRIQUES (la dernière marche avant le TP)
+//  LEÇON 7 — INTERFACES ET GÉNÉRIQUES
 // =====================================================================
 //  Ce que tu vas apprendre :
 //   - une interface = un contrat : des fonctions déclarées SANS corps
@@ -11,7 +11,8 @@ package lecon07
 //   - les génériques <T> : un "type à trou" qu'on remplit à l'usage,
 //     illustrés par une petite classe Boite<T>
 //   - combiner les deux : IStockage<T> + StockageEnMemoire<T>...
-//     c'est exactement le coeur du TP2 (IDao<T> / SalleService) !
+//     c'est le principe des vrais projets : un service qui ne dépend
+//     que d'un contrat, jamais d'une implémentation précise.
 // =====================================================================
 
 // ----- LES DÉCLARATIONS (interfaces et classes vivent hors de main) -----
@@ -74,11 +75,11 @@ interface IStockage<T> {
 // Demain on pourrait écrire StockageEnFichier<T> ou StockageEnBase<T> : le
 // reste du programme, qui ne connaît que IStockage, ne changerait PAS.
 //
-// >>> C'est EXACTEMENT le principe du TP2 (dossier src/tp2) : l'interface
-// >>> IDao<T> y joue le rôle de IStockage<T>, et SalleService travaille
-// >>> uniquement avec ce contrat, sans savoir comment les données sont
-// >>> rangées. Après cette leçon, ouvre les fichiers de src/tp2 : tu vas
-// >>> tout reconnaître !
+// >>> C'est EXACTEMENT ce patron qu'on retrouve dans les vrais projets :
+// >>> une interface de stockage (souvent appelée DAO) définit le contrat,
+// >>> et un service travaille uniquement avec ce contrat, sans savoir
+// >>> comment les données sont rangées. Tu le retrouveras dans un projet
+// >>> à venir : ce que tu apprends ici, tu le reconnaîtras.
 class StockageEnMemoire<T> : IStockage<T> {
     val elements = mutableListOf<T>()
 
@@ -126,7 +127,7 @@ fun main() {
     println("Boîte à nombre : ${boiteNombre.sortir()}")
     // boiteNombre.ranger("oups")  // <- ERREUR : cette boîte n'accepte que des Int
 
-    // ===== 4. IStockage<T> : LE CONTRAT GÉNÉRIQUE, COMME AU TP2 =====
+    // ===== 4. IStockage<T> : LE CONTRAT GÉNÉRIQUE =====
     val stock: IStockage<String> = StockageEnMemoire<String>()
     stock.ajouter("Salle A")
     stock.ajouter("Salle B")

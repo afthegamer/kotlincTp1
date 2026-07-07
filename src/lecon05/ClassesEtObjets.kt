@@ -12,7 +12,8 @@ package lecon05
 //   - override fun toString() pour contrôler l'affichage d'un objet
 //   - private set : tout le monde peut LIRE, seule la classe peut ÉCRIRE
 //   - companion object : la partie partagée par TOUTES les instances
-//   - le constructeur secondaire "constructor(...)" (la forme utilisée au TP2)
+//   - le constructeur secondaire "constructor(...)" : utile quand on veut
+//     séparer la déclaration des propriétés de leur initialisation
 // =============================================================================
 
 // En Kotlin, une classe se déclare en dehors de main(), au niveau du fichier.
@@ -74,7 +75,7 @@ class Produit(val nom: String) {
 
     // Le companion object est la partie de la classe PARTAGÉE par toutes les
     // instances : il existe en un seul exemplaire, quel que soit le nombre
-    // d'objets créés. Parfait pour un compteur d'identifiants, comme au TP.
+    // d'objets créés. Parfait pour un compteur d'identifiants.
     companion object {
         var compteur: Int = 0
     }
@@ -82,7 +83,7 @@ class Produit(val nom: String) {
 
 // ----- Rectangle : mention du constructeur SECONDAIRE -----
 // Kotlin permet aussi d'écrire le constructeur dans le corps de la classe,
-// avec le mot-clé "constructor". C'est cette forme que le TP2 utilise : les
+// avec le mot-clé "constructor". Dans cette forme, les
 // propriétés sont déclarées à part, et le constructeur les remplit.
 class Rectangle {
     var largeur: Int = 0
@@ -134,7 +135,7 @@ fun main() {
     println("${p1.nom} a l'id ${p1.id}, ${p2.nom} a l'id ${p2.id}")
     println("Nombre total de produits créés : ${Produit.compteur}")
 
-    // ===== 7. LE CONSTRUCTEUR SECONDAIRE (FORME DU TP2) =====
+    // ===== 7. LE CONSTRUCTEUR SECONDAIRE =====
     val r = Rectangle(3, 4)
     println("Rectangle de ${r.largeur} x ${r.hauteur}")
 
