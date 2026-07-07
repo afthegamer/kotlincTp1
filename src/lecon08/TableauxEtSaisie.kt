@@ -169,6 +169,6 @@ fun exercice3() {
     // Avec "7", ça doit afficher : Tu as commandé 7 article(s).
     // Teste ensuite en remplaçant "7" par "xyz" : tu dois obtenir 0.
     // Indice : combine l'appel sécurisé ?. , toIntOrNull() et l'Elvis ?:
-    // sur une seule ligne : saisie?.toIntOrNull() ?: 0 (revois les leçons 4 et 7).
+    // sur une seule ligne : saisie?.toIntOrNull() ?: 0 (revois la leçon 4 et la section 7 ci-dessus).
     // (à toi d'écrire ton code ici)
 }

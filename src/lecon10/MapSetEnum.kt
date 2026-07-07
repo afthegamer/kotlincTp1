@@ -93,7 +93,7 @@ fun main() {
     ages.put("David", 40)  // put fait exactement comme la ligne au-dessus
     println("Ages : $ages")  // {Alice=31, Bob=25, Chloé=28, David=40}
 
-    // .keys donne l'ensemble des clés, .values la liste des valeurs.
+    // .keys donne l'ensemble des clés, .values la collection des valeurs.
     println("Les clés    : ${ages.keys}")    // [Alice, Bob, Chloé, David]
     println("Les valeurs : ${ages.values}")  // [31, 25, 28, 40]
 
